@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suriya Vlogs</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:black;
+    font-family:monospace;
+    color:#00ff00;
+    text-align:center;
+}
+
+/* Allow Scroll */
+body{
+    overflow:auto;
+}
+
+/* Matrix Canvas */
+canvas{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+}
+
+/* Content Styling */
+.content{
+    position:relative;
+    z-index:1;
+    padding:50px 20px;
+    max-width:900px;
+    margin:auto;
+}
+
+h1{
+    font-size:50px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+h2{
+    margin-top:40px;
+    font-size:28px;
+}
+
+p, li{
+    font-size:18px;
+    line-height:1.8;
+}
+
+ul{
+    list-style:none;
+    margin-top:10px;
+}
+
+.section{
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="matrix"></canvas>
+
+<div class="content">
+
+<h1>Welcome to Suriya Vlogs</h1>
+
+<p>
+यहाँ आपको एक सफल Vlogs YouTube Channel बनाने की पूरी प्रक्रिया Step-by-Step सिखाई जाएगी — बिल्कुल Beginner से Professional Level तक।
+</p>
+
+<h2>STEP 1: Niche Choose करें</h2>
+<ul>
+<li>- Vlogging (Daily / College / Travel)</li>
+<li>- Tech Videos</li>
+<li>- Comedy / Roast</li>
+<li>- Education</li>
+<li>- Gaming</li>
+</ul>
+
+<h2>STEP 2: Gmail ID बनाएँ</h2>
+<p>gmail.com पर जाएँ और एक professional नाम से Gmail बनाएं।</p>
+
+<h2>STEP 3: YouTube Channel Create करें</h2>
+<p>YouTube पर जाएँ → Profile icon → Create Channel → Name & Photo set करें।</p>
+
+<h2>STEP 4: Channel Branding</h2>
+<ul>
+<li>- Logo Design</li>
+<li>- Banner Create</li>
+<li>- About Section लिखें</li>
+<li>- Social Links add करें</li>
+</ul>
+
+<h2>STEP 5: Equipment</h2>
+<ul>
+<li>- Mobile (1080p)</li>
+<li>- Mic</li>
+<li>- Tripod</li>
+<li>- Light</li>
+</ul>
+
+<h2>STEP 6: Video Shoot</h2>
+<p>Clear audio + Confidence + Clean background जरूरी है।</p>
+
+<h2>STEP 7: Editing</h2>
+<ul>
+<li>- Kinemaster</li>
+<li>- CapCut</li>
+<li>- VN Editor</li>
+</ul>
+
+<h2>STEP 8: Upload Strategy</h2>
+<p>Catchy Title + SEO Description + Tags + Attractive Thumbnail</p>
+
+<h2>STEP 9: Consistency</h2>
+<p>Week में 2–3 Videos + Shorts Upload करें।</p>
+
+<h2>STEP 10: Monetization</h2>
+<p>
+1000 Subscribers + 4000 Watch Hours  
+या  
+10M Shorts Views (90 days)
+</p>
+
+<h2>IMPORTANT RULE</h2>
+<p>
+Consistency + Improvement + Patience = Growth
+</p>
+
+</div>
+
+<script>
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+const fontSize = 16;
+const columns = Math.floor(canvas.width / fontSize);
+
+const drops = [];
+
+for(let x = 0; x < columns; x++){
+    drops[x] = 1;
+}
+
+function draw(){
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx.fillStyle = "#0f0";
+    ctx.font = fontSize + "px monospace";
+
+    for(let i = 0; i < drops.length; i++){
+        const text = letters.charAt(Math.floor(Math.random() * letters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if(drops[i] * fontSize > canvas.height && Math.random() > 0.975){
+            drops[i] = 0;
+        }
+
+        drops[i]++;
+    }
+}
+
+setInterval(draw, 33);
+
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
