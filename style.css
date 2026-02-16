@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -88,7 +87,7 @@ nav {
 
 .menu li a {
   text-decoration: none;
-  color: #fff;
+  color: #eb0000;
   font-weight: 500;
   letter-spacing: 0.5px;
   font-size: 17px;
@@ -101,7 +100,7 @@ nav {
 }
 
 .menu li a:hover {
-  color: #00e5ff;
+  color: #00ff0d;
 }
 
 .menu li a::after {
@@ -123,10 +122,9 @@ nav {
   display: none;
   background: none;
   border: none;
-  color: #fff;
+  color: #7403ff;
   font-size: 24px;
   cursor: pointer;
-
 }
 
 #suriya {
@@ -147,7 +145,7 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: #ffffff;
   padding: 0 20px;
   position: relative;
   animation: fadeIn 1.5s ease;
@@ -176,7 +174,7 @@ nav {
 .cta-button {
   display: inline-block;
   background: #ff0000;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 15px 35px;
   border-radius: 50px;
   text-decoration: none;
@@ -215,7 +213,6 @@ a{
      font-size: 30px;
      background-color: cornsilk;
 }
-
 
 main {
   padding: 100px 0;
